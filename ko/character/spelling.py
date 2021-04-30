@@ -60,9 +60,18 @@ class HanJaMo:
 		}
 
 		def make_other(other_word):
+			"""
+			add the given parameter to sentence
+			:param other_word: word to add to sentence
+			:return: sentence after adding
+			"""
 			return "{0}{1}".format(sentence, other_word)
 
 		def make_keyword():
+			"""
+			add the complete Korean code to sentence
+			:return: sentence after adding
+			"""
 			cho = HanJaMo.CHOSUNG_LIST.index(keyword_dict['cho'])
 
 			if keyword_dict['jung'] is None:
@@ -81,7 +90,7 @@ class HanJaMo:
 			return "{0}{1}".format(sentence, chr(keyword))
 
 		for keyword in keyword_list:
-			if re.match('.*[ㄱ-ㅎㅏ-ㅣ가-힣]+.*', keyword) is not None:
+			if re.match('[ㄱ-ㅎㅏ-ㅣ가-힣]', keyword) is not None:
 				if keyword_dict['edit']:
 					if keyword in HanJaMo.JONGSUNG_LIST:
 						# keyword can be jongsung

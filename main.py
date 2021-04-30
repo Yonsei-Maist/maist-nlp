@@ -2,16 +2,6 @@
 test for all nlp
 """
 
-from ko.lib.spelling import HanJaMo
+from lib.data import DataManager
 
-han = HanJaMo()
-ex = [
-	"반가스빈다.",
-	"만나서 반가워요!!"
-]
-
-for item in ex:
-	res = han.divide(item)
-	print(res)
-	res = han.union(res)
-	print(res)
+DataManager.get_all_data('/Users/gwonchan-u/Downloads')

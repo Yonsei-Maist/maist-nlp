@@ -16,7 +16,17 @@ pip -U git+https://git@github.com/Yonsei-Maist/maist-nlp
 
 ## Use
 ```
-# need to write
+# lib
+## data manager
+
+
+# ko
+## use HanJaMo
+from ko.character.spelling import HanJaMo
+
+han = HanJaMo()
+res = han.divide("반갑습니다.")  # ㅂㅏㄴㄱㅏㅂㅅㅡㅂㄴㅣㄷㅏ.
+res = han.union(res)  # 반갑습니다.
 ```
 
 ## Author
